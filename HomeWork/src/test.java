@@ -12,7 +12,7 @@ class test {
 			return;
 		}
 	
-		System.out.println("请选择输出内容：字符数（-c）,单词数（-w），行数（-r）");
+		System.out.println("请选择输出内容：字符数（-c）,单词数（-w），行数（-l）");
 		System.out.println("退出（exit）");
 		String choose = scanner.nextLine();
 		if(choose.equals("-c")){
@@ -23,7 +23,7 @@ class test {
 			sta.word_num = sta.wordSum(f_name);
 			System.out.println("单词数:"+sta.word_num);
 			choose();
-		}else if(choose.equals("-r")){
+		}else if(choose.equals("-l")){
 			sta.row_num = sta.rowSum(f_name);
 			System.out.println("行数:"+sta.row_num);
 			choose();
