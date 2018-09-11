@@ -17,16 +17,28 @@ class test {
 		String choose = scanner.nextLine();
 		if(choose.equals("-c")){
 			sta.char_num = sta.charSum(f_name);
-			System.out.println("字符数:"+sta.char_num);
-			choose();
+			if(sta.char_num == -1){
+				choose();
+			}else{
+				System.out.println("字符数:"+sta.char_num);
+				choose();
+			}
 		}else if(choose.equals("-w")){
 			sta.word_num = sta.wordSum(f_name);
-			System.out.println("单词数:"+sta.word_num);
-			choose();
+			if(sta.word_num == -1){
+				choose();
+			}else{
+				System.out.println("单词数:"+sta.word_num);
+				choose();
+			}
 		}else if(choose.equals("-l")){
 			sta.row_num = sta.rowSum(f_name);
-			System.out.println("行数:"+sta.row_num);
-			choose();
+			if(sta.row_num == -1){
+				choose();
+			}else{
+				System.out.println("行数:"+sta.row_num);
+				choose();
+			}
 		}else if(choose.equals("exit")){
 			System.out.println("退出成功。");
 		}else{
