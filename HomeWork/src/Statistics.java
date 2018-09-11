@@ -1,5 +1,7 @@
 
 import java.io.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 class Statistics {
 	int char_num;
 	int word_num;
@@ -28,25 +30,33 @@ class Statistics {
 		return num;
 	}
 	int wordSum(String fName){
-		int flag;
 		int num = 0;
-		File file = new File(fName);
-		FileReader fr = null;
+		String str = null;
+		String s = "\\d+.\\d+|\\w+";
+		Pattern  pattern=Pattern.compile(s);  
+		FileInputStream inputStream = null;
 		try {
-			fr = new FileReader(file);
-		} catch (FileNotFoundException e) {
+			inputStream = new FileInputStream(fName);
+		} catch (FileNotFoundException e2) {
 			// TODO 自动生成的 catch 块
-			e.printStackTrace();
+			e2.printStackTrace();
 			System.out.println("文件路径输入有误");
 		}
+		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 		try {
-		while((flag=fr.read())!=-1){
-			if(flag==' ' || flag == '\r')num++;
-		}
-		} catch (IOException e) {
+			while((str = bufferedReader.readLine()) != null)
+			{
+				  Matcher  ma=pattern.matcher(str); 
+				   while(ma.find()){ 
+//					   	if(num%10 == 0 &&num>1)System.out.println();
+//			            System.out.print(ma.group()+" ");  
+			            num++;
+			        }  
+			}
+		} catch (IOException e1) {
 			// TODO 自动生成的 catch 块
-			e.printStackTrace();
-		}
+			e1.printStackTrace();
+		}      
 		return num;
 	}
 	int rowSum(String fName){
