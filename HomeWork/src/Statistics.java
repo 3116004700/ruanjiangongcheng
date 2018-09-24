@@ -57,8 +57,8 @@ class Statistics {
 				{
 					  Matcher  ma=pattern.matcher(str); 
 					   while(ma.find()){ 
-	//					   	if(num%10 == 0 &&num>1)System.out.println();
-	//			            System.out.print(ma.group()+" ");  
+						   	if(num%10 == 0 &&num>1)System.out.println();
+				            System.out.print(ma.group()+" ");  
 				            num++;
 				        }  
 				}

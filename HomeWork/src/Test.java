@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class test {
+class Test {
 	Scanner scanner = new Scanner(System.in);
 	Statistics sta = new Statistics();
 	
@@ -48,7 +48,7 @@ class test {
 	}
 	public static void main(String[] args) {
 		// TODO 自动生成的方法存根
-		test test = new test();
+		Test test = new Test();
 		test.choose();
 	}
 }
