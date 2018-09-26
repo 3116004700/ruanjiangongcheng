@@ -97,7 +97,13 @@ public class GetResult {
 			int k=a*a2%a3;
 			int c=MakeDivision.Get_max(a, a3);
 			if(c==1) {
-				result=p+"'"+k+"/"+a3;
+				if(p==0) {
+					result=k+"/"+a3;
+				}
+				else if (p!=0) {
+					result=p+"'"+k+"/"+a3;
+				}
+				
 			}
 			else {
 				k=k/c;
@@ -141,7 +147,13 @@ public class GetResult {
 				else {
 					p=+a*a1/a2;
 					k=a*a1%a2;
-					result=p+"'"+k+"/"+a2;
+					if (p==0) {
+						result=k+"/"+a2;
+					}
+					else if (p!=0) {
+						result=p+"'"+k+"/"+a2;
+					}
+					
 				}
 			}
 		}

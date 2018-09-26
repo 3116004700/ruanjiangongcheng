@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class GetSymbol {
 	static WriteStringToFile writeIO = new WriteStringToFile();
+	static Check check = new Check();
 	public static char Get_Symbol() {
 		Random random=new Random();
 		char[] c= {'+','-','×','÷'};
@@ -25,8 +26,8 @@ public class GetSymbol {
 		String string3=null;
 		String[] strings1=new String[m];
 		String[] strings2=new String[m];
-		File file1 = new File("question.txt");
-		File file2 = new File("answer.txt");
+		File file1 = new File("Exercises.txt");
+		File file2 = new File("Answers.txt");
 		file1.delete();
 		file2.delete();
 		for(int i=1;i<m+1;i++) {
@@ -67,17 +68,31 @@ public class GetSymbol {
 			String stringc=news[2];
 //			writeIO.clearFile("question.txt");
 //			writeIO.clearFile("answer.txt");
+			String stringd=stringa+":  "+stringb;
+			String stringe=stringa+":  "+stringb+stringc;
 
-			writeIO.writeToFile("question.txt",stringb);
-			writeIO.writeToFile("question.txt","\n");
-			writeIO.writeToFile("answer.txt",stringc);
-			writeIO.writeToFile("answer.txt","\n");
+			writeIO.writeToFile("Exercises.txt",stringd);
+			writeIO.writeToFile("Exercises.txt","\n");
+			writeIO.writeToFile("Answers.txt",stringe);
+			writeIO.writeToFile("Answers.txt","\n");
 //			System.out.println(stringa);
 //			System.out.println(stringb);
 //			System.out.println(stringc);
 			
+
 		}
-		
+		System.out.println("是否判断正误 y/n");
+		String isCheck = in.next();
+		if(isCheck.equals("y")){
+			try {
+				check.checkAnswer(file1,file2);
+			} catch (IOException e) {
+				// TODO 自动生成的 catch 块
+				e.printStackTrace();
+			}
+		}else{
+			System.out.println("谢谢使用");
+		}
 		
 	}
 }

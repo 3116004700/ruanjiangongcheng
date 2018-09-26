@@ -1,13 +1,10 @@
 package Com.software;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 
 public class WriteStringToFile {
-//追加写入文件内容
 	public void writeToFile(String filePath,String string){
 		FileOutputStream fos = null;
 		try {
@@ -31,4 +28,6 @@ public class WriteStringToFile {
 			e.printStackTrace();
 		}
 	}
+
+
 }

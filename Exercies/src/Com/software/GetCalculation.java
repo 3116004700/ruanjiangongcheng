@@ -79,12 +79,8 @@ public class GetCalculation {
 			}
 		}
 		if (string.contains("+")) {
-			if (stringa.contains("'")&&stringb.contains("'")) {
-				answer=GetResult.Fra_add_Fra(stringa, stringb);
-			}
-			else {
-				return strings+"&"+answer;
-			}
+			answer=GetResult.Fra_add_Fra(stringa, stringb);
+
 		}
 		if (string.contains("¡Á")) {
 			answer=GetResult.Fra_mul_Fra(stringa, stringb);
